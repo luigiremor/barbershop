@@ -1,0 +1,26 @@
+package com.barbershop.test.input;
+
+import java.util.List;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import com.barbershop.test.model.Gender;
+
+import graphql.schema.GraphQLInputType;
+
+@Getter
+@Setter
+public class PersonInput implements GraphQLInputType {
+
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	private String name;
+	private Integer age;
+	private Gender gender;
+
+
+}
