@@ -12,12 +12,16 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+//@NoArgsConstructor
 @Getter
 @Setter
-//@NoArgsConstructor
 @Entity
 @Table(name = "PEOPLE")
 public class Person {
+
+	public Person(){
+		super();
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
