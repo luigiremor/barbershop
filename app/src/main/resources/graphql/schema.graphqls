@@ -1,3 +1,7 @@
+schema {
+    query: Query
+}
+
 type Person {
     id: ID!,
     name: String,
