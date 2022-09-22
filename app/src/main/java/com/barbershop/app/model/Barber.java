@@ -4,11 +4,10 @@ import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -16,13 +15,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-//@NoArgsConstructor
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "PEOPLE")
-public class Person {
+@Table(name = "BARBERS")
+public class Barber {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,19 +29,11 @@ public class Person {
 	@Column(name = "NAME")
 	private String name;
 
-	@Column(name = "AGE")
-	private Integer age;
-
-	@Enumerated(EnumType.STRING)
-	private Gender gender;
-
-	@OneToMany(mappedBy = "costumer")
+	@OneToMany(mappedBy = "barber")
 	private Collection<Schedule> schedules;
 
-	public Person(String name, Integer age, Gender gender) {
+	public Barber(String name) {
 		this.name = name;
-		this.age = age;
-		this.gender = gender;
 	}
 
 
