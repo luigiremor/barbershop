@@ -2,7 +2,6 @@ package com.barbershop.app.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,12 +27,12 @@ public class Schedule {
 	@Column(name = "DATE")
 	private String date;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "COSTUMER_ID", nullable = false)
 	private Person costumer;
 
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "BARBER_ID", nullable = false)
 	private Barber barber;
 
